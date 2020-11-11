@@ -23,7 +23,7 @@ cpp: c
 
 c: build
 	@echo "Build c_print"
-	$(AT)$(CPPC) -c src/c_print.c -I inc/ -o build/c_print.o
+	$(AT)$(CC) -c src/c_print.c -I inc/ -o build/c_print.o
 
 # Create the build_dir
 build:
