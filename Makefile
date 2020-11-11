@@ -8,17 +8,22 @@ AT :=
 endif
 
 CC=gcc
+CPPC=g++
 
-all: c
+all: cpp
 	@echo "Build main"
-	$(AT)$(CC) -c src/main.c -I inc/ -o build/main.o
+	$(AT)$(CPPC) -c src/main.cpp -I inc/ -o build/main.o
 	@echo "Link"
-	$(AT)$(CC) build/c_print.o build/main.o -o build/project.out
+	$(AT)$(CPPC) build/c_print.o build/cpp_print.o build/main.o -o build/project.out
 	@echo "\nFinished building"
+
+cpp: c
+	@echo "Build cpp_print"
+	$(AT)$(CPPC) -c src/cpp_print.cpp -I inc/ -o build/cpp_print.o
 
 c: build
 	@echo "Build c_print"
-	$(AT)$(CC) -c src/c_print.c -I inc/ -o build/c_print.o
+	$(AT)$(CPPC) -c src/c_print.c -I inc/ -o build/c_print.o
 
 # Create the build_dir
 build:
