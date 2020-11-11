@@ -1,0 +1,14 @@
+build/
+
+# Object files
+*.o
+
+# Executables
+*.exe
+*.out
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/extensions.json
